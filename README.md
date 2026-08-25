@@ -97,10 +97,28 @@ docker exec -it frappe-bench bash
 
 ### 5. Initialize Bench Workspace
 
+You need to enter the `/app` directory and run the following command:
+
+```bash
+cd /app
+<command>
+```
+
+This is because the `docker-compose` configuration maps the current directory to `/app` using:
+
+```yaml
+volumes:
+  - ./:/app
+```
+
 Create a new Frappe Bench workspace:
 
 ```bash
 bench init --skip-redis-config-generation frappe-bench
+
+#or
+
+bench init --skip-redis-config-generation --frappe-branch version-16 frappe-bench
 ```
 
 Explanation:

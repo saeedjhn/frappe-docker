@@ -542,3 +542,5 @@ pyrightconfig.json
 
 # Manual Folders
 docs/
+
+frappe-bench/
